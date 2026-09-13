@@ -1,15 +1,18 @@
 # Investor Tools PL
 
-Free, privacy-first investment and tax calculators for Polish investors.
+Prywatny, działający wyłącznie w przeglądarce zestaw trzech narzędzi dla polskiego inwestora: podatek od sprzedaży akcji/ETF, zagraniczna dywidenda i Dividend Snowball.
 
-Projekt jest rozwijany jako otwarte narzędzie dla inwestorów w Polsce. Docelowo obejmuje kalkulatory podatku od sprzedaży akcji i ETF-ów, podatku od zagranicznych dywidend oraz symulator Dividend Snowball.
+## Start
 
-## Założenia
+Wymagany Node.js 20+.
 
-- bez logowania i kont,
-- bez przechowywania prywatnych danych finansowych w chmurze,
-- obliczenia wykonywane lokalnie w przeglądarce,
-- reguły podatkowe oparte na oficjalnych źródłach,
-- jawna metodologia obliczeń i źródła.
+```bash
+npm ci
+npm run dev
+```
 
-> Projekt ma charakter informacyjny i pomocniczy. Nie stanowi porady podatkowej ani inwestycyjnej.
+Kontrole: `npm run typecheck`, `npm test`, `npm run build`. Dane formularzy nie są wysyłane do backendu ani utrwalane poza lokalną sesją aplikacji. Projekt nie oferuje logowania, importu brokerskiego ani porady podatkowej.
+
+Metodologia i ograniczenia: [docs/METHODOLOGY.md](docs/METHODOLOGY.md). Źródła: [docs/SOURCES.md](docs/SOURCES.md). Architektura: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+Kursy EUR, USD i GBP są automatycznie pobierane z publicznego API NBP dla ostatniego dnia roboczego poprzedzającego zdarzenie. Do NBP trafiają wyłącznie kod waluty i data; kwoty ani informacje o instrumencie nie opuszczają przeglądarki. Gdy API jest niedostępne, aplikacja nie zgaduje kursu i udostępnia wyraźnie oznaczony ręczny fallback.
