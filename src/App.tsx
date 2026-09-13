@@ -140,6 +140,10 @@ function Result({ label, value, emphasis = false }: { label: string; value: stri
 
 export function App() {
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = ['Sprzedaż akcji i ETF', 'Zagraniczna dywidenda', 'Dividend Snowball'];
-  return <div className="app-shell"><header className="topbar"><div className="topbar-inner"><a className="brand" href="/">Investor Tools <strong>PL</strong></a><div className="trust-note">Dane finansowe pozostają w tej przeglądarce</div><a className="github-link" href={githubUrl} target="_blank" rel="noreferrer">GitHub <span>· Open Source</span></a></div></header><nav className="tabs" aria-label="Narzędzia"><div>{tabs.map((tab, index) => <button type="button" className={activeTab === index ? 'active' : ''} aria-current={activeTab === index ? 'page' : undefined} onClick={() => setActiveTab(index)} key={tab}>{tab}</button>)}</div></nav>{activeTab === 0 ? <Sales /> : activeTab === 1 ? <Dividends /> : <Snowball />}<footer><div><span>Open Source · Apache-2.0</span><a href={githubUrl} target="_blank" rel="noreferrer">Zobacz kod na GitHubie</a></div><p>Narzędzie informacyjne — nie jest poradą podatkową ani inwestycyjną.</p></footer></div>;
+  const tabs = [
+    { full: 'Sprzedaż akcji i ETF', short: 'Sprzedaż' },
+    { full: 'Zagraniczna dywidenda', short: 'Dywidenda' },
+    { full: 'Dividend Snowball', short: 'Snowball' },
+  ];
+  return <div className="app-shell"><header className="topbar"><div className="topbar-inner"><a className="brand" href="/">Investor Tools <strong>PL</strong></a><div className="trust-note">Dane finansowe pozostają w tej przeglądarce</div></div></header><nav className="tabs" aria-label="Narzędzia"><div>{tabs.map((tab, index) => <button type="button" className={activeTab === index ? 'active' : ''} aria-label={tab.full} aria-current={activeTab === index ? 'page' : undefined} onClick={() => setActiveTab(index)} key={tab.full}><span className="tab-full">{tab.full}</span><span className="tab-short">{tab.short}</span></button>)}</div></nav>{activeTab === 0 ? <Sales /> : activeTab === 1 ? <Dividends /> : <Snowball />}<footer><div><span>Open Source · Apache-2.0</span><a href={githubUrl} target="_blank" rel="noreferrer">Zobacz kod na GitHubie</a></div><p>Narzędzie informacyjne — nie jest poradą podatkową ani inwestycyjną.</p></footer></div>;
 }

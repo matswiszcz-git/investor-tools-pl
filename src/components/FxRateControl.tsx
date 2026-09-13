@@ -58,11 +58,11 @@ export function FxRateControl({ currency, date, rate, onRateChange, adapter = de
       {status === 'idle' && <span>Wybierz datę, aby pobrać kurs.</span>}
       {status === 'loading' && <span className="fx-loading">Pobieramy właściwy kurs NBP…</span>}
       {status === 'success' && currency === 'PLN' && <span>PLN: kurs 1,0000 — bez zapytania do NBP.</span>}
-      {status === 'success' && currency !== 'PLN' && <span>Kurs automatyczny NBP: <strong>{rate.toFixed(4)}</strong> · tabela z dnia <strong>{effectiveDate}</strong></span>}
+      {status === 'success' && currency !== 'PLN' && <span className="fx-summary"><span>Kurs NBP: <strong>{rate.toFixed(4)}</strong> · <strong>{effectiveDate}</strong></span><small>Automatyczny</small></span>}
       {status === 'error' && <span role="alert">{message}</span>}
       {status === 'manual' && <label>Ręczny kurs PLN<input aria-label="Ręczny kurs PLN" min="0.0001" step="0.0001" type="number" value={rate || ''} onChange={(event) => onRateChangeRef.current(Number(event.target.value), { manual: true })}/><small>{message}</small></label>}
       {date && currency !== 'PLN' && status !== 'loading' && status !== 'manual' && <button className="link-button" type="button" onClick={enableManual}>{status === 'error' ? 'Podaj kurs ręcznie' : 'Zastąp kursem ręcznym'}</button>}
-      {status !== 'idle' && status !== 'manual' && currency !== 'PLN' && <a href={nbpSourceUrl} target="_blank" rel="noreferrer">Źródło: Narodowy Bank Polski, tabela A</a>}
+      {status !== 'idle' && status !== 'manual' && currency !== 'PLN' && <a href={nbpSourceUrl} target="_blank" rel="noreferrer">Źródło: NBP · tabela A</a>}
     </div>
   );
 }
