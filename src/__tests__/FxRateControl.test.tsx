@@ -19,8 +19,8 @@ describe('FxRateControl', () => {
     render(<Harness />);
     expect(screen.getByText(/Pobieramy właściwy kurs/)).toBeTruthy();
     resolve({ rates: [{ mid: 4.321, effectiveDate: '2024-06-07' }] });
-    expect((await screen.findByText(/tabela z dnia/)).textContent).toContain('4.3210');
-    expect(screen.getByText(/tabela z dnia/).textContent).toContain('2024-06-07');
+    expect((await screen.findByText(/Kurs NBP:/)).textContent).toContain('4.3210');
+    expect(screen.getByText(/Kurs NBP:/).textContent).toContain('2024-06-07');
     expect(onRateChange).toHaveBeenLastCalledWith(4.321, { effectiveDate: '2024-06-07', manual: false });
   });
 

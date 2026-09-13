@@ -3,3 +3,46 @@
 @media(max-width:760px){.topbar-inner{padding:0 16px}.trust-note{display:none}.tabs>div{padding:7px 16px}.tabs button{padding:9px 11px}.tool-heading{display:block;margin-bottom:22px}.tool-heading p{margin-top:7px}.trade-fields{grid-template-columns:repeat(2,1fr)}.field-instrument{grid-column:auto}.remove-button{justify-self:start}.fx-rate{flex-wrap:wrap}.dividend-form{grid-template-columns:repeat(2,1fr)}.result-heading{display:block}.result-heading p{margin-top:5px}.result-grid,.result-grid--five{grid-template-columns:repeat(2,1fr)}.scenarios,.scenario-results{grid-template-columns:1fr}.scenario-fields{grid-template-columns:repeat(2,1fr)}.sources{grid-template-columns:1fr}.chart{height:330px}.milestones>div{grid-template-columns:repeat(2,1fr)}footer{display:block}footer p{margin-top:8px}}
 @media(max-width:480px){input,select{font-size:16px;padding:9px}.topbar-inner{min-height:52px}.github-link span{display:none}.tabs button{font-size:.8rem}.tabs>div{padding-right:8px}main{padding:24px 14px 42px}.tool-heading h1{font-size:1.8rem}.section-heading{align-items:flex-start;flex-direction:column}.toolbar{width:100%}.toolbar button{flex:1}.trade-row{padding:10px}.trade-fields{grid-template-columns:1fr 1fr}.dividend-form{grid-template-columns:1fr 1fr}.result-panel{padding:18px 14px;margin-inline:-2px}.result-grid,.result-grid--five{grid-template-columns:1fr 1fr}.result-item{padding-right:8px}.result-item strong,.result-item--emphasis strong{font-size:1.05rem;overflow-wrap:anywhere}.scenario{padding:14px 12px}.scenario-fields{grid-template-columns:1fr 1fr}.scenario-result dl{grid-template-columns:1fr}.chart{height:300px;margin-inline:-8px}.milestones>div{grid-template-columns:1fr 1fr}.milestones article{display:block}.sources a{font-size:.78rem}footer{padding-inline:14px}footer div{flex-direction:column;gap:4px}}
 .result-panel,.scenario-results,.scenario-result,.chart,.table-scroll{min-width:0;max-width:100%}.scenario-result>strong{overflow-wrap:anywhere}.yearly-table{max-width:100%;overflow:hidden}
+.tab-short{display:none}
+.fx-summary{display:inline-flex;align-items:center;gap:8px}.fx-summary small{padding:2px 6px;border-radius:999px;background:#e2eee9;color:#326655;font-size:.66rem;font-weight:750}
+@media(max-width:760px){
+  .topbar-inner{min-height:48px;padding-block:0}
+  .brand{font-size:.95rem}
+  .tabs>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px 10px;overflow:visible}
+  .tabs button{min-width:0;min-height:42px;padding:6px 4px;text-align:center}
+  .tab-full{display:none}.tab-short{display:inline}
+  main{padding-top:18px}
+  .tool-heading{margin-bottom:14px}
+  .tool-heading>span{font-size:.64rem}
+  .tool-heading h1{font-size:1.85rem;line-height:1.05}
+  .tool-heading p{font-size:.9rem;line-height:1.35;margin-top:5px}
+  .section-block{padding-top:12px;margin-bottom:16px}
+  .section-heading{margin-bottom:9px}
+  .toolbar button{min-height:42px;padding:6px 9px}
+  .trade-list{gap:6px}.trade-row{padding:8px 9px}.trade-fields{gap:6px 8px}
+  label{gap:2px}.button-primary{min-height:42px;margin-top:7px;padding-block:6px}
+  .remove-button{min-height:42px;padding:7px 3px;font-weight:650;text-decoration:underline;text-underline-offset:2px}
+  .fx-rate{margin-top:5px;gap:5px 9px;line-height:1.3}
+  .result-panel{margin:16px 0;padding-top:15px;padding-bottom:15px}
+  .result-heading{margin-bottom:10px}.result-item{padding-top:10px}
+  .scenario{padding-top:11px;padding-bottom:10px}.scenario-title{margin-bottom:7px}.scenario fieldset{margin-bottom:8px;padding-top:7px}
+  .notice{margin-top:8px}.disclosure summary{padding-block:12px}
+}
+@media(max-width:480px){
+  .topbar-inner{min-height:46px;padding-inline:12px}
+  .tabs>div{padding-inline:6px}
+  .tabs button{font-size:.76rem}
+  main{padding:14px 12px 34px}
+  .tool-heading{margin-bottom:11px}
+  .tool-heading h1{font-size:1.75rem}
+  .tool-heading p{font-size:.875rem}
+  .section-heading{gap:8px}
+  .section-heading h2{font-size:.96rem}
+  .toolbar{gap:5px}.toolbar button{font-size:.75rem}
+  .trade-row{border-radius:8px;padding:7px}.trade-fields{gap:4px 7px}
+  input,select{height:43px;padding:7px 8px}
+  .fx-rate{font-size:.71rem}.fx-summary{align-items:flex-start;flex-direction:column;gap:2px}
+  .result-panel{margin:12px -1px;padding:13px 11px}
+  .scenario{padding:10px 9px}.scenario-fields{gap:5px 7px}
+  .dividend-form{gap:5px 7px}
+}
