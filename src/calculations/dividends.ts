@@ -1,0 +1,3 @@
+import type {DividendInput,DividendResult} from '../types';
+const money=(n:number)=>Math.round((n+Number.EPSILON)*100)/100;
+export function calculateDividend(i:DividendInput):DividendResult{if(i.gross<0||i.fxRate<=0||i.foreignWithholding<0)throw new Error('Nieprawidłowe dane');const grossPln=money(i.gross*i.fxRate);const polishTax=money(grossPln*.19);const paidPln=money((i.creditableForeignTax??i.foreignWithholding)*i.fxRate);const credit=money(Math.min(polishTax,paidPln));const due=money(Math.max(0,polishTax-credit));const totalTax=money(i.foreignWithholding*i.fxRate+due);return{grossPln,polishTax,credit,due,effectiveRate:grossPln?totalTax/grossPln:0}}
